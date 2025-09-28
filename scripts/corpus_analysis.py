@@ -273,7 +273,13 @@ def mean_sentence_length(fem_dict, male_dict, div_dict):
     means = pd.DataFrame({'female': mean_f, 'male': mean_m, 'diverse': mean_d})
 
 def most_frequent_words_onegender(input_folder, output_path, wordclass="all"):
-    # hab ich schon irgendwo alle worte in einem riesen string? dann koennte ich Counter() nutzen
+    '''
+    creates wordcloud for one gender group
+    :param input_folder: input folder
+    :param output_path: path to save wordcloud at
+    :param wordclass: wordclass to examine, all= whole corpus, verb= verbs only, adjectives = adjectives only
+    :return: None
+    '''
     all_texts = ""
     # get stopwords
     stopwords = set(nltk.corpus.stopwords.words('english'))
@@ -315,6 +321,14 @@ def most_frequent_words_onegender(input_folder, output_path, wordclass="all"):
     return stats.most_common(150)
 
 def most_frequent_words(input_fem, input_male, input_div):
+    '''
+    compiled method creating wordclouds for male, female, and diverse characters' dialogue.
+    Uses the helper method most_frequent_words_onegender().
+    :param input_fem: female dialogue
+    :param input_male: male dialogue
+    :param input_div: diverse dialogue
+    :return: None
+    '''
     # all words
     stats_fem = most_frequent_words_onegender(input_fem, "results/wordcloud-fem")
     stats_male = most_frequent_words_onegender(input_male, "results/wordcloud-male")
@@ -331,12 +345,15 @@ def most_frequent_words(input_fem, input_male, input_div):
     stats_div = most_frequent_words_onegender(input_div, "results/wordcloud-div-adj", wordclass="adjectives")
 
 def dialogue_over_time(fem_dict, male_dict, div_dict, release_years):
-    # for each gamevariant, get release year
-    # get all dialogue of one year (for all genders)
-    # plot by year (absolute numbers)
-
-    # get total amount of dialogue per year, and percentagewise how much f/m/d have spoken in that year
-    # plot by year
+    '''
+    Show developments of dialogue over time. Creates plots.
+    :param fem_dict: dictionary of female dialogue.
+    :param male_dict: dictionary of male dialogue.
+    :param div_dict: dictionary of diverse dialogue.
+    :param release_years: release years of gamevariants.
+    :return: absolute counts, relative counts.
+    Plots absolute and relative shares of dialogue by year per gender.
+    '''
     all_dialogue_data = []
 
     # Iterate through each gamevariant and its year
