@@ -21,7 +21,7 @@ The analysis used the labels 'Positive', 'Neutral' and 'Negative. Goal was to in
 
 Plots were created for each game, as the following example shows. These plots can also be found [here](https://github.com/heidekrauttt/master-thesis/tree/main/results/sentiment-analysis/plots/allgenders_sentiment).
 
-[<img src="https://github.com/heidekrauttt/master-thesis/blob/main/results/sentiment-analysis/plots/allgenders_sentiment/sentiment_plot_kingsquest5.png">] <br>
+<img src="https://github.com/heidekrauttt/master-thesis/blob/main/results/sentiment-analysis/plots/allgenders_sentiment/sentiment_plot_kingsquest5.png" alt="sentiment analysis" width="500"> <br>
 Separate results for the sentiments of the three groups can be found [here](https://github.com/heidekrauttt/master-thesis/tree/main/results/sentiment-analysis/plots/separate-analysis-plots). The results are also saved as [.csv files](https://github.com/heidekrauttt/master-thesis/tree/main/results/sentiment-analysis/csv-files).
 ### Emotion Detection
 #### Base Emotions
