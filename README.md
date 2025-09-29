@@ -6,17 +6,28 @@ The digital world is ever expanding, its realms stretch into more and more areas
 The study shows that characters of different genders behave differently, choosing different vocabulary and displaying an array of emotions and sentiments. Overall, male characters dominate the corpus, across subsections such as subgenre or target group. Most games have some diverse character representation, however it is marginal in comparison.
 The findings of this study will provide a solid foundation for further research and will offer valuable insights into the portrayal of masculinity and diverse characters in video games.
 
+## Introduction'.
+The master thesis that this repository is part of had the title 'Unveiling the Masc: A corpus analysis of masculinity video game dialogue'. The Master thesis is a part of the study program [Digital Humanities](https://www.ilw.uni-stuttgart.de/lehre/digital-humanities) at the University of Stuttgart, Germany. <br>
+In the thesis, I wanted to assess how masculinity is represented in video game dialogue. Video games are a place that modern media often associates with game bros, toxic masculinity, and a general dominance of violent, ultra-muscular male characters. But is that actually true?<br>
+I decided to use an already labeled [corpus of video game dialogue](https://github.com/seannyD/VideoGameDialogueCorpusPublic) that was self-inflating and contained dialogue from 50 RPG's. The data was labeled by the speaker's gender and contained metadata such as target group and release year. Not all games were scrapable from the source, and some of the scraped data files had incomplete gender labeling or did not contain any dialogue yet, since the corpus is still growing. In the end, I was left with 19 games that were analyzable. I wanted to investigate gender, particularly masculinity in games. I thus chose to follow a Connellian approach to masculinities; this is a prominent gender studies' theory that argues that multiple masculinities exist. These contain a hegemonic ideal, and other forms of masculinity support and validate the dominance of the hegemony. Persons of other genders are subordinated in the structure. <br>
+This framework allowed me to examine masculinities as a multiple, and stay open to different character representations. Because the corpus labeled the character's genders into the groups female, male, and diverse, it was also possible to take a deeper look at diverse character representation. Queer and diverse characters often are neglected in statistical analyses, since their set of data is frequently marginal. However, not investing time and resources into queer studies repeats the current system, which after J. Butler is one of the levers of valdating it. I therefore placed emphasis on also looking at the diverse characters in this data set, their representation and their roles in the game. <br>
+This repository contains the Python code that was used for my thesis, the 'data' folder is not available publicly. Interested parties can download it themselves following the instructions on the [corpus website](https://github.com/seannyD/VideoGameDialogueCorpusPublic). 
+
 ## Methods
 In order to assess masculinities in game dialogue, the master thesis implemented multiple methods. 
-[This script](https://github.com/heidekrauttt/master-thesis/blob/main/scripts/run_basic_analysis.py) runs the complete analysis, including most of the plots. Further plots can be created using the [postprocessing script](https://github.com/heidekrauttt/master-thesis/blob/main/scripts/postprocessing.py). <br>
+[This script](https://github.com/heidekrauttt/master-thesis/blob/main/scripts/run_basic_analysis.py) runs the complete analysis, including a generation of most of the plots. Further plots can be created using the [postprocessing script](https://github.com/heidekrauttt/master-thesis/blob/main/scripts/postprocessing.py). <br>
+All plots can be found in the [results](https://github.com/heidekrauttt/master-thesis/tree/main/results) section. <br>
 Some example results are shown in the following.
 
 ### Corpus Analysis
+As a first step when analyzing a corpus, a corpus analysis should be employed. As a primary step, the data should be investigated. The following plot shows the percentage that each gender group speaks over the whole of the dialogue, separated by years. It is visible that the male characters speak the most, some years female characters get around 50% speaking time, and diverse characters unfortunately make up only a small portion of the dialogue.
 <img src="https://github.com/heidekrauttt/master-thesis/blob/main/results/corpus_analysis/percentage_dialogue_over_time.png" alt="dialogue-over-time" width="600"/>
+This second visualization shows how many lines are in the corpus per year, and it is very clearly visible that the later years permitted much bigger games, resulting in way more dialogue. One of the key contributing factors is the 'Persona' series, which has by far the largest amount of dialogue per game. In the corpus there are three of the series' games. Their release years are clearly marked in this overview (2006, 2008, 2016).
 <img src="https://github.com/heidekrauttt/master-thesis/blob/main/results/corpus_analysis/absolute_dialogue_over_time.png" alt="absolute-dialogue" width="600"/>
 
 
 #### Word Clouds
+In my case, since I graduate from DH, word clouds can't be missed in the thesis, even though their analysis is not the most objective endeavour.
 Find [all wordclouds here](https://github.com/heidekrauttt/master-thesis/tree/main/results/corpus_analysis/wordclouds). <br>
 <img src="https://github.com/heidekrauttt/master-thesis/blob/main/results/corpus_analysis/wordclouds/wordcloud-fem.png" alt="wordcloud-fem" width="600"/> <br>
 
