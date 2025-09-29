@@ -1,4 +1,4 @@
-# Master Thesis
+# Unveiling the Masc: A corpus analysis of masculinity in video game dialogues.
 Open repository containing the code for my Master thesis in Digital Humanities at the University of Stuttgart. <br>
 
 ## Abstract
