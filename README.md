@@ -21,47 +21,62 @@ Some example results are shown in the following.
 
 ### Corpus Analysis
 As a first step when analyzing a corpus, a corpus analysis should be employed. As a primary step, the data should be investigated. The following plot shows the percentage that each gender group speaks over the whole of the dialogue, separated by years. It is visible that the male characters speak the most, some years female characters get around 50% speaking time, and diverse characters unfortunately make up only a small portion of the dialogue.
-<img src="https://github.com/heidekrauttt/master-thesis/blob/main/results/corpus_analysis/percentage_dialogue_over_time.png" alt="dialogue-over-time" width="600"/>
-This second visualization shows how many lines are in the corpus per year, and it is very clearly visible that the later years permitted much bigger games, resulting in way more dialogue. One of the key contributing factors is the 'Persona' series, which has by far the largest amount of dialogue per game. In the corpus there are three of the series' games. Their release years are clearly marked in this overview (2006, 2008, 2016).
+<img src="https://github.com/heidekrauttt/master-thesis/blob/main/results/corpus_analysis/percentage_dialogue_over_time.png" alt="dialogue-over-time" width="600"/><br>
+This second visualization shows how many lines are in the corpus per year, and it is very clearly visible that the later years permitted much bigger games, resulting in way more dialogue. One of the key contributing factors is the 'Persona' series, which has by far the largest amount of dialogue per game. In the corpus there are three of the series' games. The newest games are clearly marked in this overview (2008, 2016) due to their size. <br>
 <img src="https://github.com/heidekrauttt/master-thesis/blob/main/results/corpus_analysis/absolute_dialogue_over_time.png" alt="absolute-dialogue" width="600"/>
 
 
 #### Word Clouds
-In my case, since I graduate from DH, word clouds can't be missed in the thesis, even though their analysis is not the most objective endeavour.
+In my case, since I graduate from DH, word clouds can't be missed in the thesis, even though their analysis is not the most objective endeavour. I decided to plot wordclouds for each gender group, and first investigated the whole corpus. After that, I zoomed in and only looked at verbs, then at adjectives.
 Find [all wordclouds here](https://github.com/heidekrauttt/master-thesis/tree/main/results/corpus_analysis/wordclouds). <br>
 <img src="https://github.com/heidekrauttt/master-thesis/blob/main/results/corpus_analysis/wordclouds/wordcloud-fem.png" alt="wordcloud-fem" width="600"/> <br>
+This is an example wordcloud, for female dialogue of the whole corpus. Overall, this wordcloud is dominated by conversational and introspective terms. The collection of  words such as \textit{need, oh, really, yeah, well, thought}, and \textit{believe}, points towards dialogue centered around emotions, opinions and internal states. The dialogue seems to be reflective, and not as action-driven. Many expressions of thought and filler words are also present, which can be interpreted as the character having a natural conversation, seemingly speaking while talking, which can make them more relatable. <br>
 
+The distinct vocabulary for the three gendered groups show some key differences: the diverse characters seem to have the most narrative and physical dialogue. It acts as a verbal storyboard and often describes the 'what' and 'where' of a scene. 
+The female wordcloud points to more psychological and conversational words in the dialogue; this indicates investigation into the 'why' questions of a task, interacting with other characters. 
+The male wordcloud shows functional words and goal-orientation. It contains both reflective language with resolution seeking.<br>
+The verbs and adjectives gave more insight into the gendered use of vocabulary. The results will not be presented in this text, but can be found in the study.
 
 #### Standardized Type Token Ratio
+The standardized type token ratio was calculated as a measure for lexical richness of the dialogue. <br>
 <img src="https://github.com/heidekrauttt/master-thesis/blob/main/results/corpus_analysis/sttr_boxplot-allgenders.png" alt="STTR" width="600"/> <br>
+The plot shows a significant variance of the media (displayed in the plot in green) for the three groups. Diverse characters have the lowest median STTR value with around 4.5, followed by the female characters with 10, and the male character group at 12.5. Overall, the STTR shows that the lexical richness for diverse characters is lower than for female characters, and both of these groups show lower median values when compared to male characters. The long whiskers of the diverse group indicate a large spread of data, and the distribution of the IQR is not symmetrical around the median. This leads to the interpretation that diverse characters overall display lower STTR's, but the high variability means that there are some outliers. The whiskers for both female and male character groups are around the same length, indicating a similar variability of the measured value.
 
 
 ### Sentiment Analysis
-A sentiment analysis was conducted using [this transformer model](https://huggingface.co/MoritzLaurer/mDeBERTa-v3-base-mnli-xnli). <br>
-The analysis used the labels 'Positive', 'Neutral' and 'Negative. Goal was to investigate differences between the speech patterns between the three gender groups female, male, and diverse. <br>
+The second part of the study used a one-shot transformer model to classify the utterances of the speakers.
+The sentiment analysis was conducted using [this transformer model](https://huggingface.co/MoritzLaurer/mDeBERTa-v3-base-mnli-xnli). <br>
+The analysis used the labels 'Positive', 'Neutral' and 'Negative. My goal was to investigate differences between the speech patterns between the three gender groups female, male, and diverse. <br>
 
-Plots were created for each game, as the following example shows. These plots can also be found [here](https://github.com/heidekrauttt/master-thesis/tree/main/results/sentiment-analysis/plots/allgenders_sentiment).
+Plots were created for each game, as the following example shows. These plots can also be found [here](https://github.com/heidekrauttt/master-thesis/tree/main/results/sentiment-analysis/plots/allgenders_sentiment).<br>
 
 <img src="https://github.com/heidekrauttt/master-thesis/blob/main/results/sentiment-analysis/plots/allgenders_sentiment/sentiment_plot_kingsquest5.png" alt="sentiment analysis" width="500"> <br>
+The plot shows an example sentiment analysis for one of the analyzed games, 'Kings Quest 5'. Over all games, some general trends have been identified with female characters dominating the highest mean scores for positive and male characters those for negative sentiments. There were however some outliers where female and male characters had only minimally differing scores, or the other gender group had the higher score of the two. The diverse character group had not the same linearity in their distribution. This is an indicator for the diverse characters not being modeled strictly after either one of the two genders in the binary model, and points towards an implementation of non-binarity as a fluid category, where characters are less constrained to a gendered performance that models either female or male patterns, but rather establishes new patterns or exists without many patterns at all. While this is not the case with all games, and some diverse representation still seems to follow one of the other groups in certain games, it is encouraging that those boundary-shifting representations can be surmised in a sentiment analysis of their dialogue in context with the game world they exist in.
 Separate results for the sentiments of the three groups can be found [here](https://github.com/heidekrauttt/master-thesis/tree/main/results/sentiment-analysis/plots/separate-analysis-plots). The results are also saved as [.csv files](https://github.com/heidekrauttt/master-thesis/tree/main/results/sentiment-analysis/csv-files).
 
 ### Emotion Detection
-
+The same transformer model was also used to classify the utterances into emotions. I started with base emotions, modeled after [Paul Ekman](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.paulekman.com/wp-content/uploads/2013/07/Basic-Emotions.pdf&ved=2ahUKEwivlMrd1P2PAxV0A9sEHZ1cFKgQFnoECBoQAQ&usg=AOvVaw0_mkacCbg1atn_MkjO3Yf2). The label 'Surprise' was kept initially, but it received very high scores across all games. This is not unexpected since the dialogue of RPGs is a main narrative drive, and new information is frequently presented using speech. Therefore, surprisal is expected, but it does not help me examine gendered differences. Therefore, in a second attempt, I left this label out, and here are the results.
 #### Base Emotions
-The labelset consisted of the labels:  <br>
+The following plot shows the mean frequency of the labels that have been assigned the highest scores in the classification, combined for all games. It is visible that 'Neutral' is the most frequent highest label, and that male characters have a lot more dialogue to get classified. <br>
 <img src="https://github.com/heidekrauttt/master-thesis/blob/main/results/emotion-detection/plots/base-emotion-utterance-wise/without-surprise-label/combined_plots/all_games_mean_percentage_barplot.png" alt="Base emotions percentage" width="500"><br>
+The second plot shows the assigned mean scores (value between zero and one) for the emotion labels, combined for all games. Again, 'Neutral' receives the highest mean score, and 'Joy' and 'Disgust' the lowest, across all gender groups. This indicates a trend towards certain emotions, disregarding the speaker's gender.
 <img src="https://github.com/heidekrauttt/master-thesis/blob/main/results/emotion-detection/plots/base-emotion-utterance-wise/without-surprise-label/combined_plots/all_games_mean_scores_barplot.png" alt="Base emotions mean" width="500"><br>
 
 
 #### Experimental Labelset 1
+After base analysis, I wanted to check for some more dynamics between female and male characters, and see if diverse characters lean more toward the classification of female or male dialogue. I therefore implemented experimental labelsets following some of the theories I had read, and tried to look at specific binary sets of labels. My theory was that if these labels would be assigned primarily to one gender, and their counterpart to another gender, that they had a very stereotypical, complementary set of gender roles. 
 The labelset consisted of the labels:  <br>
+The following plot shows the mean frequency of the labels that have been assigned the highest scores in the classification, combined for all games.<br>
 <img src="https://github.com/heidekrauttt/master-thesis/blob/main/results/emotion-detection/plots/experimental-utterance-wise-labelset-1/all-gendergroups-compared/all_games_mean_percentage_barplot.png" alt="Experimental labelset 1 percentage" width="500"><br>
+The second plot shows the assigned mean scores (value between zero and one) for the emotion labels, combined for all games.
 <img src="https://github.com/heidekrauttt/master-thesis/blob/main/results/emotion-detection/plots/experimental-utterance-wise-labelset-1/all-gendergroups-compared/all_games_mean_scores_barplot.png" alt="Experimental labelset 1 mean" width="500"><br>
 
 
 #### Experimental Labelset 2
 The labelset consisted of the labels:  <br>
+The following plot shows the mean frequency of the labels that have been assigned the highest scores in the classification, combined for all games.<br>
 <img src="https://github.com/heidekrauttt/master-thesis/blob/main/results/emotion-detection/plots/experimental-utterance-wise-labelset-2/all-gendergroups-compared/all_games_mean_percentage_barplot.png" alt="Experimental labelset 2 percentage" width="500"><br>
+The second plot shows the assigned mean scores (value between zero and one) for the emotion labels, combined for all games.
 <img src="https://github.com/heidekrauttt/master-thesis/blob/main/results/emotion-detection/plots/experimental-utterance-wise-labelset-2/all-gendergroups-compared/all_games_mean_scores_barplot.png" alt="Experimental labelset 2 mean" width="500"><br>
 
 
